@@ -1,0 +1,74 @@
+https://www.codewithharry.com/blogpost/django-deploy-nginx-gunicorn/
+
+sudo apt update 
+
+obtain a refreshed list of available packages from the distro’s repositories (repos)
+
+sudo apt upgrade
+
+command the system to install (or ‘upgrade’) any or all the available packages
+
+Step 1 – Installing Nginx
+
+  sudo apt update
+  sudo apt install nginx
+
+
+Step 3 – Checking your Web Server
+
+  systemctl status nginx
+
+Verify Nginx is Active and Running
+
+  sudo service nginx status
+
+
+Step 2 – Adjusting the Firewall
+
+
+
+Check UFW Configration
+
+    sudo ufw app list
+
+applications that rely on network communications will typically set up a UFW profile that you can use to allow connection from external addresses. 
+
+  allow Http,Https and open ssh services access thrugh firewall
+
+    sudo ufw allow 'Nginx HTTP'
+    sudo ufw allow 'Nginx HTTPS'
+    sudo ufw allow 'OpenSSH'
+
+Verify firewal status wheather its active or not
+
+    sudo ufw status
+
+if it is not active. Activate it
+
+    sudo ufw enable
+
+
+Install SSL Certificate for Domains on Nginx VPS Hosting Remote Server
+
+Install Certbot and it’s Nginx plugin
+
+  sudo apt install certbot python3-certbot-nginx
+
+Verify Web Server Ports are Open and Allowed through Firewall
+
+  sudo ufw status verbose
+
+Obtain an SSL certificate
+
+  sudo certbot --nginx -d your_domain.com -d www.your_domain.com
+
+Check Status of Certbot
+
+  sudo systemctl status certbot.timer
+
+Dry Run SSL Renewal
+
+  sudo certbot renew --dry-run
+
+
+

@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers - PM SHRI Government Senior Secondary School Nagpur</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    {% if teachers %}
+    <table class="table table-bordered table-hover table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Subject</th>
+                <th>Bio</th>
+                <th>Image</th>
+                <th>Date of Birth</th>
+                <th>Joining Date</th>
+                <th>Retirement Date</th>
+                <th>Gender</th>
+                <th>Category</th>
+                <th>Father's Name</th>
+                <th>Mother's Name</th>
+                <th>Spouse</th>
+            </tr>
+        </thead>
+        <tbody class="striker">
+            {% for teacher in teachers %}
+            <tr>
+                <td>{{ teacher.first_name }}</td>
+                <td>{{ teacher.last_name }}</td>
+                <td>{{ teacher.email }}</td>
+                <td>{{ teacher.phone_number }}</td>
+                <td>{{ teacher.subject }}</td>
+                <td>{{ teacher.bio }}</td>
+                <td>{{ teacher.image }}</td>
+                <td>{{ teacher.date_of_birth }}</td>
+                <td>{{ teacher.joining_date }}</td>
+                <td>{{ teacher.retirement_date }}</td>
+                <td>{{ teacher.gender }}</td>
+                <td>{{ teacher.category }}</td>
+                <td>{{ teacher.father_name }}</td>
+                <td>{{ teacher.mother_name }}</td>
+                <td>{{ teacher.spouse }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

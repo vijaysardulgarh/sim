@@ -1,0 +1,11 @@
+Django               5.0.3
+django-import-export 3.3.7
+pillow               10.2.0
+
+
+
+
+
+
+
+

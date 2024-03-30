@@ -1,0 +1,59 @@
+{%extends 'base.html'%}
+
+    {% block title %} <title>Hello world</title> 
+    {% endblock title %}
+
+
+    {% block content %}
+
+    {% if staff_members %}
+    <table class="table table-bordered table-hover table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Employee ID</th>
+                <th>School</th>
+                <th>Name</th>
+                <th>Father's Name</th>
+                <th>Mother's Name</th>
+                <th>Spouse</th>
+                <th>Gender</th>
+                <th>Category</th>
+                <th>Date of Birth</th>
+                <th>Joining Date</th>
+                <th>Retirement Date</th>
+                <th>Email ID</th>
+                <th>Mobile No</th>
+                <th>Subject</th>
+                <th>Photo</th>
+                <th>Staff Type</th>
+                <th>Employement Type</th>
+            </tr>
+        </thead>
+        <tbody class="striker">
+            {% for staff_members in staff_members %}
+            <tr>
+                <td>{{ staff.members.employee_id }}</td>
+                <td>{{ staff_members.school }}</td>
+                <td>{{ staff_members.name }}</td>
+                <td>{{ staff_members.father_name }}</td>
+                <td>{{ staff_members.mother_name }}</td>
+                <td>{{ staff_members.spouse_name }}</td>
+                <td>{{ staff_members.gender }}</td>
+                <td>{{ staff_members.category }}</td>
+                <td>{{ staff_members.date_of_birth }}</td>
+                <td>{{ staff_members.joining_date }}</td>
+                <td>{{ staff_members.retirement_date }}</td>
+                <td>{{ staff_members.email }}</td>
+                <td>{{ staff_members.phone_number }}</td>
+                <td>{{ staff_members.subject }}</td>
+                <td>{{ staff_members.profile_picture }}</td>
+                <td>{{ staff_members.staff_role }}</td>
+                <td>{{ staff_members.employment_type }}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+    {% endblock content%}

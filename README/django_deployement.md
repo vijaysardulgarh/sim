@@ -34,15 +34,15 @@ Example:-
 
 Write below code inside sim.com.gunicorn.socket File
 
-    Syntax:- 
-    [Unit]
-    Description=your_domain.gunicorn socket
-    
-    [Socket]
-    ListenStream=/run/your_domain.gunicorn.sock
-    
-    [Install]
-    WantedBy=sockets.target
+Syntax:- 
+[Unit]
+Description=your_domain.gunicorn socket
+
+[Socket]
+ListenStream=/run/your_domain.gunicorn.sock
+
+[Install]
+WantedBy=sockets.target
 
 Example:- 
 
@@ -54,6 +54,7 @@ Example:-
         
         [Install]
         WantedBy=sockets.target
+        
 
 Create System Service File for Gunicorn
 
@@ -62,8 +63,10 @@ Syntax:- sudo nano /etc/systemd/system/your_domain.gunicorn.service
 Example:- 
 
     sudo nano /etc/systemd/system/sim.com.gunicorn.service
+    
 
 Write below code inside sim.com.gunicorn.service File
+
 Syntax:-
 [Unit]
 Description=your_domain.gunicorn daemon
@@ -102,6 +105,7 @@ Example:-
     
     [Install]
     WantedBy=multi-user.target
+    
 
 Start Gunicorn Socket and Service
 

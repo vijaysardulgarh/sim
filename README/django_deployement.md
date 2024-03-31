@@ -1,9 +1,9 @@
 
 Create Virtual env
 
-  cd ~/project_folder_name
-  Syntax:- virtualenv env_name
-  Example:- virtualenv venv
+    cd ~/project_folder_name
+    Syntax:- virtualenv env_name
+    Example:- virtualenv venv
   
 Activate Virtual env
 

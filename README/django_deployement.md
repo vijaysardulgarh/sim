@@ -114,14 +114,14 @@ Write following Code in Virtual Host File
         }
     
         location  /media/ {
-            root /var/www/miniblog;
+            root /var/www/sims;
         }
     }    
 
 
 Enable Virtual Host or Create Symbolic Link of Virtual Host File
 
-    sudo ln -s /etc/nginx/sites-available/sonamkumari.com /etc/nginx/sites-enabled/sonamkumari.com
+    sudo ln -s /etc/nginx/sites-available/sim.com /etc/nginx/sites-enabled/sim.com
 
 Check Configuration is Correct or Not
     

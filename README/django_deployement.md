@@ -25,26 +25,10 @@ Deactivate Virtualenv
 
 Create System Socket File for Gunicorn
 
-Syntax:- sudo nano /etc/systemd/system/your_domain.gunicorn.socket
-
-Example:- 
-
     sudo nano /etc/systemd/system/sim.com.gunicorn.socket
     
 
 Write below code inside sim.com.gunicorn.socket File
-
-Syntax:- 
-[Unit]
-Description=your_domain.gunicorn socket
-
-[Socket]
-ListenStream=/run/your_domain.gunicorn.sock
-
-[Install]
-WantedBy=sockets.target
-
-Example:- 
 
         [Unit]
         Description=sim.com.gunicorn socket
@@ -58,35 +42,10 @@ Example:-
 
 Create System Service File for Gunicorn
 
-Syntax:- sudo nano /etc/systemd/system/your_domain.gunicorn.service
-
-Example:- 
-
     sudo nano /etc/systemd/system/sim.com.gunicorn.service
     
 
 Write below code inside sim.com.gunicorn.service File
-
-Syntax:-
-[Unit]
-Description=your_domain.gunicorn daemon
-Requires=your_domain.gunicorn.socket
-After=network.target
-
-[Service]
-User=username
-Group=groupname
-WorkingDirectory=/home/username/project_folder_name
-ExecStart=/home/username/project_folder_name/virtual_env_name/bin/gunicorn \
-          --access-logfile - \
-          --workers 3 \
-          --bind unix:/run/your_domain.gunicorn.sock \
-          inner_project_folder_name.wsgi:application
-
-[Install]
-WantedBy=multi-user.target
-
-Example:-
 
     [Unit]
     Description=sonamkumari.com.gunicorn daemon
@@ -107,11 +66,8 @@ Example:-
     WantedBy=multi-user.target
     
 
+
 Start Gunicorn Socket and Service
-
-Syntax:- sudo systemctl start your_domain.gunicorn.socket
-
-Example:- 
 
     sudo systemctl start sim.com.gunicorn.socket
     
@@ -130,6 +86,7 @@ Example:-
 
 Syntax:- sudo systemctl enable your_domain.gunicorn.service
 Example:- sudo systemctl enable sonamkumari.com.gunicorn.service
+
 Check Gunicorn Status
 
     sudo systemctl status sim.com.gunicorn.socket

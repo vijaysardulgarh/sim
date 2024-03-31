@@ -106,19 +106,32 @@ Example:-
 Start Gunicorn Socket and Service
 
 Syntax:- sudo systemctl start your_domain.gunicorn.socket
-Example:- sudo systemctl start sim.com.gunicorn.socket
+
+Example:- 
+
+    sudo systemctl start sim.com.gunicorn.socket
+    
 
 Syntax:- sudo systemctl start your_domain.gunicorn.service
-Example:- sudo systemctl start sim.com.gunicorn.service
+Example:- 
+
+    sudo systemctl start sim.com.gunicorn.service
+    
 Enable Gunicorn Socket and Service
+
 Syntax:- sudo systemctl enable your_domain.gunicorn.socket
-Example:- sudo systemctl enable sim.com.gunicorn.socket
+Example:- 
+
+    sudo systemctl enable sim.com.gunicorn.socket
 
 Syntax:- sudo systemctl enable your_domain.gunicorn.service
 Example:- sudo systemctl enable sonamkumari.com.gunicorn.service
 Check Gunicorn Status
-sudo systemctl status sonamkumari.com.gunicorn.socket
-sudo systemctl status sonamkumari.com.gunicorn.service
+
+    sudo systemctl status sim.com.gunicorn.socket
+    sudo systemctl status sim.com.gunicorn.service
+    
 Restart Gunicorn (You may need to restart everytime you make change in your project code)
-sudo systemctl daemon-reload
-sudo systemctl restart sonamkumari.com.gunicorn
+
+    sudo systemctl daemon-reload
+    sudo systemctl restart sim.com.gunicorn

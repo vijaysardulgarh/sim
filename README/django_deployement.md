@@ -45,19 +45,19 @@ Create System Service File for Gunicorn
 Write below code inside sim.com.gunicorn.service File
 
     [Unit]
-    Description=sonamkumari.com.gunicorn daemon
-    Requires=sonamkumari.com.gunicorn.socket
+    Description=sim.com.gunicorn daemon
+    Requires=sim.com.gunicorn.socket
     After=network.target
     
     [Service]
-    User=raj
-    Group=raj
-    WorkingDirectory=/home/raj/miniblog
+    User=vijaysardulgarh
+    Group=vijaysardulgarh
+    WorkingDirectory=/home/vijasardulgarh/sim
     ExecStart=/home/raj/miniblog/mb/bin/gunicorn \
               --access-logfile - \
               --workers 3 \
-              --bind unix:/run/sonamkumari.com.gunicorn.sock \
-              miniblog.wsgi:application
+              --bind unix:/run/sim.com.gunicorn.sock \
+              sim.wsgi:application
     
     [Install]
     WantedBy=multi-user.target
@@ -67,24 +67,14 @@ Write below code inside sim.com.gunicorn.service File
 Start Gunicorn Socket and Service
 
     sudo systemctl start sim.com.gunicorn.socket
-    
-
-Syntax:- sudo systemctl start your_domain.gunicorn.service
-Example:- 
-
     sudo systemctl start sim.com.gunicorn.service
     
 Enable Gunicorn Socket and Service
 
-Syntax:- sudo systemctl enable your_domain.gunicorn.socket
-Example:- 
-
     sudo systemctl enable sim.com.gunicorn.socket
+    sudo systemctl enable sonamkumari.com.gunicorn.service
 
-Syntax:- sudo systemctl enable your_domain.gunicorn.service
-Example:- sudo systemctl enable sonamkumari.com.gunicorn.service
-
-Check Gunicorn Status
+Check Gunicorn Socket and Service Status
 
     sudo systemctl status sim.com.gunicorn.socket
     sudo systemctl status sim.com.gunicorn.service

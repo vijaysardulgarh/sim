@@ -12,12 +12,12 @@ Activate Virtual env
 
 Install Dependencies
 
-  pip install -r requirements.txt
+    pip install -r requirements.txt
   
 Install Gunicorn
 
-  pip install gunicorn
+    pip install gunicorn
   
 Deactivate Virtualenv
 
-  deactivate
+    deactivate

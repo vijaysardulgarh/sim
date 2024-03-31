@@ -7,8 +7,8 @@ Create Virtual env
   
 Activate Virtual env
 
-Syntax:- source virtualenv_name/bin/activate
-Example:- source venv/bin/activate
+    Syntax:- source virtualenv_name/bin/activate
+    Example:- source venv/bin/activate
 
 Install Dependencies
 

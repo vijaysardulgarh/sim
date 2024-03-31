@@ -1,14 +1,11 @@
 
 Create Virtual env
 
-    cd ~/project_folder_name
-    Syntax:- virtualenv env_name
-    Example:- virtualenv venv
+    virtualenv venv
   
 Activate Virtual env
 
-    Syntax:- source virtualenv_name/bin/activate
-    Example:- source venv/bin/activate
+    source venv/bin/activate
 
 Install Dependencies
 

@@ -34,26 +34,26 @@ Example:-
 
 Write below code inside sim.com.gunicorn.socket File
 
-Syntax:- 
-[Unit]
-Description=your_domain.gunicorn socket
-
-[Socket]
-ListenStream=/run/your_domain.gunicorn.sock
-
-[Install]
-WantedBy=sockets.target
-
-Example:- 
-
+    Syntax:- 
     [Unit]
-    Description=sim.com.gunicorn socket
+    Description=your_domain.gunicorn socket
     
     [Socket]
-    ListenStream=/run/sim.com.gunicorn.sock
+    ListenStream=/run/your_domain.gunicorn.sock
     
     [Install]
     WantedBy=sockets.target
+
+Example:- 
+
+        [Unit]
+        Description=sim.com.gunicorn socket
+        
+        [Socket]
+        ListenStream=/run/sim.com.gunicorn.sock
+        
+        [Install]
+        WantedBy=sockets.target
 
 Create System Service File for Gunicorn
 
